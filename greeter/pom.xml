@@ -3,11 +3,11 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>org.jboss.as.quickstarts</groupId>
-   <artifactId>jboss-as-login</artifactId>
+   <artifactId>jboss-as-greeter</artifactId>
    <version>7.0.2-SNAPSHOT</version>
    <packaging>war</packaging>
-   <name>JBoss AS Quickstarts: Login</name>
-   <description>JBoss AS Quickstarts: Login</description>
+   <name>JBoss AS Quickstarts: Greeter</name>
+   <description>JBoss AS Quickstarts: Greeter</description>
 
    <url>http://jboss.org/jbossas</url>
    <licenses>
@@ -103,7 +103,7 @@
    <build>
       <!-- Set the name of the war, used as the context root when the app 
          is deployed -->
-      <finalName>jboss-as-login</finalName>
+      <finalName>${project.artifactId}</finalName>
       <plugins>
          <plugin>
             <artifactId>maven-war-plugin</artifactId>
