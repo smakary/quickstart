@@ -1,4 +1,4 @@
-ws-security:  Using JEE Declarative Security to Control Access Web Service using SAML@ and Trust
+ws-security:  Using JEE Declarative Security to Control Access Web Service using SAML2 and Trust
 ====================
 Author: Sherif Makary, RH MW SA
 
