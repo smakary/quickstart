@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SecuredService" targetNamespace="http://jboss.org/as/quickstarts/wssecurity" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://jboss.org/as/quickstarts/wssecurity" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://jboss.org/as/quickstarts/wssecurity" schemaLocation="securedwsi_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="callSecuredWSMethod">
+    <wsdl:part name="parameters" element="tns:callSecuredWSMethod">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="callSecuredWSMethodResponse">
+    <wsdl:part name="parameters" element="tns:callSecuredWSMethodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SecuredService">
+    <wsdl:operation name="callSecuredWSMethod">
+      <wsdl:input name="callSecuredWSMethod" message="tns:callSecuredWSMethod">
+    </wsdl:input>
+      <wsdl:output name="callSecuredWSMethodResponse" message="tns:callSecuredWSMethodResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecuredServiceSoapBinding" type="tns:SecuredService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="callSecuredWSMethod">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="callSecuredWSMethod">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="callSecuredWSMethodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecuredService">
+    <wsdl:port name="SecuredServicePort" binding="tns:SecuredServiceSoapBinding">
+      <soap:address location="http://localhost:8080/ws-security/SecuredService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
